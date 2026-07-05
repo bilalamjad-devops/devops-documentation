@@ -1,4 +1,3 @@
-Bilal 👌 — yes, you’ve got the progression exactly right. Let me lay it out clearly so your labs build a **step‑by‑step learning path**:
 
 ---
 
@@ -31,4 +30,4 @@ By the end, you’ve gone from **manual automation** → **structured automation
 
 ---
 
-Bilal, would you like me to draft **Lab 2 as a Medium‑style article** (like I did for Lab 1 and Lab 3), so your repo and articles form a complete 3‑part series? That way readers can follow the journey step by step.
+5-July-2026
