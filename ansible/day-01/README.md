@@ -49,17 +49,16 @@ passwd ansible
 enter password:
 ```
 
-### ansible server
+### ansible server and all nodes
 
-su - ansible 
-
-touch file1
-
+sudo su 
 visudo
 
 root  ALL=(ALL)     ALL
 ansible ALL={ALL} NOPASSWD: ALL
 
 esc:wq
+
+we are going sudouser privilages to all ansible-server and nodes. so we can work with adding sudo with our command.
 
 9-July-2026
