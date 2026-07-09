@@ -50,15 +50,21 @@ enter password:
 ```
 
 ### ansible server and all nodes
-
+```all
 sudo su 
 visudo
 
 root  ALL=(ALL)     ALL
 ansible ALL={ALL} NOPASSWD: ALL
-
+```
 esc:wq
 
 we are going sudouser privilages to all ansible-server and nodes. so we can work with adding sudo with our command.
+
+To verify:
+su - ansible
+
+yum install httpd -y 
+sudo yum install httpd -y
 
 9-July-2026
