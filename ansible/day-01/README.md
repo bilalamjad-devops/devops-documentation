@@ -49,4 +49,10 @@ passwd ansible
 enter password:
 ```
 
+### ansible server
+
+su - ansible 
+
+touch file1
+
 9-July-2026
