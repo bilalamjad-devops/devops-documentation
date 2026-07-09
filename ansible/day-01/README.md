@@ -23,5 +23,6 @@ PastePrivateIPofNode2
 ```
 ESC:wq
 
+Now we have made a group and added private IPs of both nodes.
 
 9-July-2026
