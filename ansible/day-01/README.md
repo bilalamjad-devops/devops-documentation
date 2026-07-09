@@ -93,4 +93,38 @@ password:
 
 Now you are in Node1. Create some files and you can see in going Node1. 
 
+Trust Relationship
+Root -> Root ka sath 
+user -> user ka sath 
+
+Ansible-server
+```
+ssh-keygen 
+ls
+.ssh
+cd .ssh
+ls 
+id_rsa id_rsa.pub
+
+ssh-copy-id ansible@PrivateIPofNode1
+
+ssh-copy-id ansible@PrivateIPofNode2
+
+cd . because we were in .ssh menu
+
+---
+
+Host Patterns
+
+all: refers to all the machines in an invertory.
+
+-> ansible all --list-hosts
+-> ansible groupname --list-hosts
+-> ansible groupname[0] --list-hosts
+
+here [0] shows first node
+
+
+
+
 9-July-2026
