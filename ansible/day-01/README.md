@@ -14,4 +14,14 @@ ansible --verion
 
 > etc abbreviation: "Editable Text Configuration"
 
+```ansible-server
+vi /etc/ansible/hosts
+
+[demo]
+PastePrivateIPofNode2
+PastePrivateIPofNode2
+```
+ESC:wq
+
+
 9-July-2026
