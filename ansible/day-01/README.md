@@ -25,4 +25,12 @@ ESC:wq
 
 Now we have made a group and added private IPs of both nodes.
 
+```ansible-server
+vi /etc/ansible/ansible.cfg
+uncomment:
+inventory = /etc/ansible/hosts
+sudo_user = root
+```
+ESC:wq
+
 9-July-2026
