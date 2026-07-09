@@ -85,4 +85,12 @@ server sshd restart
 Note: big tasks are performed by root user
 
 
+su - ansible
+
+ssh PrivateIPofNode1
+
+password: 
+
+Now you are in Node1. Create some files and you can see in going Node1. 
+
 9-July-2026
