@@ -67,4 +67,18 @@ su - ansible
 yum install httpd -y 
 sudo yum install httpd -y
 
+
+All ansible-server and both nodes
+
+```all
+vi /etc/ssh/sshd_config
+PermitRootLogin yes 
+PasswordAuthentication yes 
+#PasswordAuthentication no 
+```
+esc:wq
+
+Note: big tasks are performed by root user
+
+
 9-July-2026
