@@ -33,4 +33,9 @@ sudo_user = root
 ```
 ESC:wq
 
+```ansible-server
+adduser ansible
+passwd ansible
+enter password: 
+
 9-July-2026
