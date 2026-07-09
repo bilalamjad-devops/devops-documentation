@@ -78,6 +78,10 @@ PasswordAuthentication yes
 ```
 esc:wq
 
+```all
+server sshd restart
+```
+
 Note: big tasks are performed by root user
 
 
