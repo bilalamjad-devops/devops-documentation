@@ -36,6 +36,17 @@ ESC:wq
 ```ansible-server
 adduser ansible
 passwd ansible
-enter password: 
+enter password:
+```
+
+### Run on both Node1 and Node2
+
+```bothNodes
+ec2-user
+sudo su
+adduser ansible
+passwd ansible
+enter password:
+```
 
 9-July-2026
