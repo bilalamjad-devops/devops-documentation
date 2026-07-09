@@ -55,4 +55,11 @@ su - ansible
 
 touch file1
 
+visudo
+
+root  ALL=(ALL)     ALL
+ansible ALL={ALL} NOPASSWD: ALL
+
+esc:wq
+
 9-July-2026
