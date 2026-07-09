@@ -68,7 +68,7 @@ yum install httpd -y
 sudo yum install httpd -y
 
 
-All ansible-server and both nodes
+### All ansible-server and both nodes
 
 ```all
 vi /etc/ssh/sshd_config
