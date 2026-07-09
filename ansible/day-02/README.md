@@ -2,15 +2,15 @@ These notes are now moving from **Ansible setup** to **using Ansible modules**. 
 
 ---
 
-# Ansible Ad-hoc Commands
+## Ansible Ad-hoc Commands
 
-## Goal
+### Goal
 
 Learn how to use Ansible modules to perform tasks on managed nodes without writing a playbook.
 
 ---
 
-# Command Structure
+## Command Structure
 
 Most ad-hoc commands follow this format:
 
@@ -36,7 +36,7 @@ ansible demo -b -m yum -a "name=httpd state=present"
 
 ---
 
-# 1. yum Module
+## 1. yum Module
 
 ### Install Apache (httpd)
 
@@ -95,7 +95,7 @@ Common states:
 
 ---
 
-# 3. user Module
+## 3. user Module
 
 Create a new user.
 
@@ -122,9 +122,9 @@ Examples:
 
 ---
 
-# 4. copy Module
+## 4. copy Module
 
-## Step 1
+### Step 1
 
 Create a file on the Ansible Control Node.
 
@@ -134,7 +134,7 @@ touch copiedfromserver
 
 ---
 
-## Step 2
+### Step 2
 
 Copy it to managed nodes.
 
@@ -144,7 +144,7 @@ ansible demo -b -m copy -a "src=copiedfromserver dest=/tmp/"
 
 ---
 
-## Step 3
+### Step 3
 
 Verify.
 
@@ -167,7 +167,7 @@ It is commonly used to distribute:
 
 ---
 
-# 5. setup Module (Facts Gathering)
+## 5. setup Module (Facts Gathering)
 
 Collect system information.
 
@@ -197,7 +197,7 @@ These facts are automatically available in playbooks.
 
 ---
 
-# 6. Idempotency ⭐⭐⭐⭐⭐
+## 6. Idempotency ⭐⭐⭐⭐⭐
 
 One of the most important concepts in Ansible.
 
@@ -242,7 +242,7 @@ With idempotency:
 
 ---
 
-# Quick Revision
+## Quick Revision
 
 | Module    | Purpose                                       |
 | --------- | --------------------------------------------- |
@@ -254,7 +254,7 @@ With idempotency:
 
 ---
 
-# Concepts Learned
+## Concepts Learned
 
 From these notes, you're learning these core DevOps concepts:
 
