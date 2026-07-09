@@ -8,9 +8,9 @@ This makes it much easier to review later.
 
 ---
 
-# Ansible Setup (Password Authentication)
+## Ansible Setup (Password Authentication)
 
-## Goal
+### Goal
 
 Configure one **Ansible Control Node (Server)** to manage two **Managed Nodes**.
 
@@ -23,7 +23,7 @@ Ansible Server
 
 ---
 
-# 1. Install Ansible (Control Node)
+### 1. Install Ansible (Control Node)
 
 ```bash
 wget https://fedoraproject.org/pub/epel-release-latest-7.noarch.rpm
@@ -41,7 +41,7 @@ ansible --version
 
 ---
 
-# 2. Inventory File
+### 2. Inventory File
 
 Inventory file location:
 
@@ -70,7 +70,7 @@ PrivateIPofNode2
 
 ---
 
-# 3. Configure Ansible
+### 3. Configure Ansible
 
 Configuration file:
 
@@ -93,9 +93,9 @@ sudo_user = root
 
 ---
 
-# 4. Create Ansible User
+### 4. Create Ansible User
 
-## On Control Node
+### On Control Node
 
 ```bash
 adduser ansible
@@ -104,17 +104,7 @@ passwd ansible
 
 ---
 
-## On Node1
-
-```bash
-sudo su
-adduser ansible
-passwd ansible
-```
-
----
-
-## On Node2
+### On Node1
 
 ```bash
 sudo su
@@ -124,7 +114,17 @@ passwd ansible
 
 ---
 
-# 5. Configure Passwordless sudo
+### On Node2
+
+```bash
+sudo su
+adduser ansible
+passwd ansible
+```
+
+---
+
+### 5. Configure Passwordless sudo
 
 Run on:
 
@@ -163,7 +163,7 @@ sudo yum install httpd -y
 
 ---
 
-# 6. Enable SSH Password Login
+### 6. Enable SSH Password Login
 
 Run on all machines.
 
@@ -190,7 +190,7 @@ service sshd restart
 
 ---
 
-# 7. Test SSH Login
+### 7. Test SSH Login
 
 Switch to ansible user.
 
@@ -210,7 +210,7 @@ Create a file to verify you're actually on Node1.
 
 ---
 
-# 8. Configure SSH Key Authentication (Recommended)
+### 8. Configure SSH Key Authentication (Recommended)
 
 Generate SSH key on the Control Node.
 
@@ -245,7 +245,7 @@ Now Ansible can connect without asking for a password.
 
 ---
 
-# 9. Host Patterns
+### 9. Host Patterns
 
 ### All hosts
 
