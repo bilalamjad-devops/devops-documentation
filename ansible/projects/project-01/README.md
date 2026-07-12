@@ -165,3 +165,184 @@ Frame it like this:
 > "This project automates the provisioning and standardization of newly created AWS EC2 instances, ensuring every server is configured consistently and is ready for application deployment."
 
 That single sentence tells a recruiter **what business problem you solved**, not just which tools you used. That's the mindset that will make your README stand out.
+
+---
+
+Excellent question. Understanding these small things will make Linux and Ansible much easier.
+
+---
+
+# 1. What does `-i` mean?
+
+In Ansible,
+
+```bash
+-i
+```
+
+means
+
+> **Inventory**
+
+It tells Ansible **where the inventory file is located**.
+
+Example:
+
+```bash
+ansible all -m ping -i hosts.ini
+```
+
+This means:
+
+* `ansible` → Run Ansible
+* `all` → Target all hosts
+* `-m ping` → Use the `ping` module
+* `-i hosts.ini` → Use `hosts.ini` as the inventory
+
+Without `-i`, Ansible looks for the default inventory (usually `/etc/ansible/hosts`).
+
+---
+
+### Another example
+
+```bash
+ansible-playbook -i hosts.ini playbook.yml
+```
+
+means:
+
+> Run `playbook.yml` using the inventory file `hosts.ini`.
+
+---
+
+# 2. What does `~` mean?
+
+```bash
+~
+```
+
+represents your **home directory**.
+
+For the `ubuntu` user:
+
+```text id="wpm75g"
+/home/ubuntu
+```
+
+So
+
+```bash
+~
+```
+
+is the same as
+
+```text id="fxujbv"
+/home/ubuntu
+```
+
+---
+
+### Example
+
+Instead of writing
+
+```bash
+cd /home/ubuntu
+```
+
+you can simply write
+
+```bash
+cd ~
+```
+
+Both do exactly the same thing.
+
+---
+
+### Another example
+
+```bash
+~/.ssh/ansible_key
+```
+
+means
+
+```text id="rx4ee5"
+/home/ubuntu/.ssh/ansible_key
+```
+
+---
+
+# 3. Why do people use `~`?
+
+Because it works regardless of the username.
+
+Imagine these users:
+
+```text id="crdvgv"
+ubuntu
+
+bilal
+
+ec2-user
+
+admin
+```
+
+Their home directories are different:
+
+```text id="jkx6hk"
+/home/ubuntu
+
+/home/bilal
+
+/home/ec2-user
+
+/home/admin
+```
+
+But for each user,
+
+```bash
+~
+```
+
+always points to **their own home directory**.
+
+---
+
+# Example Command
+
+```bash
+ansible all -m ping -i ~/ansible/hosts --private-key=~/.ssh/ansible_key
+```
+
+Let's break it down:
+
+| Part                               | Meaning                                                |
+| ---------------------------------- | ------------------------------------------------------ |
+| `ansible`                          | Run the Ansible command                                |
+| `all`                              | Target all hosts in the inventory                      |
+| `-m ping`                          | Use the `ping` module to test connectivity             |
+| `-i ~/ansible/hosts`               | Use the inventory file located in `~/ansible/hosts`    |
+| `--private-key=~/.ssh/ansible_key` | Use the SSH private key stored in `~/.ssh/ansible_key` |
+
+---
+
+## Quick Reference
+
+| Symbol/Option | Meaning                                                              |
+| ------------- | -------------------------------------------------------------------- |
+| `-i`          | Inventory file                                                       |
+| `-m`          | Module                                                               |
+| `-a`          | Module arguments                                                     |
+| `~`           | Home directory of the current user                                   |
+| `.`           | Current directory                                                    |
+| `..`          | Parent directory                                                     |
+| `/`           | Root of the filesystem (or a path separator within an absolute path) |
+
+These are among the most common symbols and options you'll encounter in Linux and Ansible. Once you're comfortable with them, reading and writing Ansible commands becomes much more intuitive.
+
+12-July-2026
